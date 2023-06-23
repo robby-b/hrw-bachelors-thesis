@@ -1,0 +1,4 @@
+{
+    "editor.formatOnSaveMode": "modifications",
+    "python.defaultInterpreterPath": "/Users/robby/miniconda3/envs/motion-prediction/bin/python"
+}

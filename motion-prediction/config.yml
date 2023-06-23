@@ -1,0 +1,74 @@
+# default random seed
+seed: 3
+
+# input and prediction length in seconds
+prediction_horizon:
+  input_len_sec: 2
+  pred_len_sec: 6
+
+# hyperparameter for different datasets
+hyperparameter:
+  av2: # argoverse 2 dataset
+    epochs: 20
+    batch_size: 64
+    lr: 0.001
+    weight_decay: 0
+  argoverse: # argoverse dataset
+    epochs: 25
+    batch_size: 64
+    lr: 0.002
+    weight_decay: 0
+  nuscenes: # nuscenes dataset
+    epochs: 100
+    batch_size: 64
+    lr: 0.001
+    weight_decay: 0.005
+
+# model params
+model: # currently implemented: VectorNet, LSTM, VectorLSTM
+  loss_function: 'MSE'      # currently implemented: GNLLL, MSE
+  num_predictions: 1
+
+# parameter for data preprocessing
+preprocessing:
+  process_num_scenarios_train: null
+  process_num_scenarios_val: null
+  scenarios_per_file: 100
+
+# training and evaluateion options
+train_eval_options:
+  log_tensorboard: false
+  finetune_model: false
+  gpu_num: 0
+  trained_model: null
+  eval_left_option: false
+  save_prediction_horizon: false
+  eval_dataset: 'val'
+  eval_batch_size: 256
+  eval_by_direction: false
+  save_eval: false
+
+# options when using the dataset
+dataset_option:
+  small_dataset_percent: null
+  dataloader_num_workers: 0
+  left_handed_option: false
+  left_and_right: false
+
+# options for plotting the processed data with viz.py
+plot_options:
+  plot_moving_scene: false
+  plot_vector_map: false
+  plot_vector_map_sample: false
+  plot_prediction: ''
+  viz_scene_idx: 0
+  viz_dataset: 'val'
+
+# options for hyperparameter serach with optuna in search_hyperparams.py
+optuna:
+  num_trials: 1000
+
+# data directorys
+directory:
+  path: './data/' # this is the path to the folder the raw and processed data is stored
+  raw: 'raw_data/' # name of folder raw data is stored

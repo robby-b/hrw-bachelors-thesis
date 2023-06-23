@@ -1,0 +1,63 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Debug integrated gradients captum",
+            "type": "python",
+            "request": "launch",
+            "program": "/Users/robby/dev/bachelors-thesis/motion-prediction/integrated_gradients.py",
+            "args": [
+                "--trained_model",
+                "model-2s6s-LSTM-MSE-K1-nuscenes-100-2023-04-02_16-46.pth",
+                "--dataset",
+                "nuscenes",
+                "--model",
+                "LSTM",
+                "--batch_size",
+                "10",
+                "--idx",
+                "23",
+                "--type",
+                "batch"
+            ],
+            "cwd": "/Users/robby/dev/bachelors-thesis/motion-prediction",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python: Debug train.py",
+            "type": "python",
+            "request": "launch",
+            "program": "/Users/robby/dev/bachelors-thesis/motion-prediction/train.py",
+            "args": [
+                "--dataset",
+                "nuscenes",
+                "--model",
+                "LSTM"
+            ],
+            "cwd": "/Users/robby/dev/bachelors-thesis/motion-prediction",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python: Debug viz.py",
+            "type": "python",
+            "request": "launch",
+            "program": "/Users/robby/dev/bachelors-thesis/motion-prediction/viz.py",
+            "args": [
+                "--prediction",
+                "model-2s6s-LSTM-MSE-K1-nuscenes-100-2023-04-02_16-46.pth",
+                "--scene_idx",
+                "23",
+                "--dataset",
+                "nuscenes",
+                "--model",
+                "LSTM"
+            ],
+            "cwd": "/Users/robby/dev/bachelors-thesis/motion-prediction",
+            "console": "integratedTerminal"
+                }
+    ]
+}
